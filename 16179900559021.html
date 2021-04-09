@@ -272,33 +272,6 @@
 
 <p><a href="https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/samples/C4CoreDiagrams.md">C4 Model Diagrams</a></p>
 
-<p>@startuml<br/>
-!include <a href="https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml">https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml</a><br/>
-&#39; uncomment the following line and comment the first to use locally<br/>
-&#39; !include C4_Context.puml</p>
-
-<p>LAYOUT_WITH_LEGEND()</p>
-
-<p>title System Context diagram for Internet Banking System</p>
-
-<p>Person(customer, &quot;Personal Banking Customer&quot;, &quot;A customer of the bank, with personal bank accounts.&quot;)<br/>
-System(banking_system, &quot;Internet Banking System&quot;, &quot;Allows customers to view information about their bank accounts, and make payments.&quot;)</p>
-
-<p>System_Ext(mail_system, &quot;E-mail system&quot;, &quot;The internal Microsoft Exchange e-mail system.&quot;)<br/>
-System_Ext(mainframe, &quot;Mainframe Banking System&quot;, &quot;Stores all of the core banking information about customers, accounts, transactions, etc.&quot;)</p>
-
-<p>Rel(customer, banking_system, &quot;Uses&quot;)<br/>
-Rel_Back(customer, mail_system, &quot;Sends e-mails to&quot;)<br/>
-Rel_Neighbor(banking_system, mail_system, &quot;Sends e-mails&quot;, &quot;SMTP&quot;)<br/>
-Rel(banking_system, mainframe, &quot;Uses&quot;)<br/>
-@enduml</p>
-
-<p>!includeurl <a href="https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml">https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml</a></p>
-
-<p>!include <a href="https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml">https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml</a></p>
-
-<p>!include ./C4_Container.puml</p>
-
 		</div>
 	</article>
 	<div class="share-comment">
