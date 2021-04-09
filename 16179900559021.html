@@ -1,0 +1,617 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>  
+	  
+  	C4模型 - vectoryao
+  	
+	</title>
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="atom.xml" rel="alternate" title="vectoryao" type="application/atom+xml">
+
+	<link href="asset/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="asset/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<script src="asset/javascripts/jquery.min.js"></script>
+	
+
+	<!--[if lt IE 9]><script src="asset/javascripts/html5.js"></script><![endif]-->
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'> -->
+	<style type="text/css">
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Nunito-Light'), url(asset/font/1TiHc9yag0wq3lDO9cw0voX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito-Regular'), url(asset/font/6TbRXKWJjpj6V2v_WyRbMX-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Nunito-Bold'), url(asset/font/TttUCfJ272GBgSKaOaD7KoX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+	</style>
+	
+	<style type="text/css">
+	.container .left-col{ opacity: 1;}
+	#pagenavi a{ font-size: 1.3em;}
+	#pagenavi .next:before{ top: 3px;}
+	#pagenavi .prev:before{ top: 3px;}
+	.container .mid-col .mid-col-container #content .archives .title{ font-size: 1.5em;}
+	.container .mid-col .mid-col-container #content article{ padding: 15px 0px;}
+	#header .subtitle {
+		line-height: 1.2em;
+		padding-top: 8px;
+	}
+	article pre{ background: none; border: none; padding: 0;}
+	article .entry-content{text-align: left;}
+	.share-comment{ padding: 25px 0px; clear: both;}
+	hr{ margin: 20px 0px;border: 0; border-top:solid 1px #ddd;}
+	</style>
+  
+
+</head>
+
+
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+				<header id="header" class="inner">
+				 
+					
+					<h1><a href="index.html">vectoryao</a></h1>
+					<p class="subtitle"></p>
+					<nav id="main-nav">
+						<ul class="main">
+						
+						  <li id=""><a target="self" href="index.html">Home</a></li>
+						
+						  <li id=""><a target="_self" href="archives.html">Archives</a></li>
+						
+						</ul>
+					</nav>
+
+					<nav id="sub-nav">
+						<div class="social">
+
+
+
+
+
+
+
+
+
+
+
+
+
+								
+
+								<a class="rss" href="atom.xml" title="RSS">RSS</a>
+							
+						</div>
+					</nav>
+				</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			<div class="mid-col-container"> <div id="content" class="inner">
+
+	<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+		<h1 class="title" itemprop="name">C4模型</h1>
+		<div class="entry-content" itemprop="articleBody">
+			<h2 id="toc_0">概述</h2>
+
+<p>最近在开发系统中，发现需要一种方式来构建对于当前系统的理解和细化，UML是我一下子映入脑海的方式，但是很久不再接触了，刚好在前段时间看到关于C4model(<a href="https://links.jianshu.com/go?to=http%3A%2F%2Fc4model.com%2F">官网</a>)相关文章，刚好可以试试。</p>
+
+<span id="more"></span><!-- more -->
+
+<p>架构图的主要功能是从各个角度和各个层次去描述系统的功能，主要是从宏观到微观的描述。C4 Model也是提供图形从不同的层次去描述我们的系统。主要的优势是C4 Model提供很少的抽象图形要素和图类型来描述系统，使得各个系统参与者都能很快理解系统的功能。这些图从层级上来看都是缩放的，就行谷歌地图一样<br/>
+<img src="media/16158681721042/17301254-73e839bbe3b5be96.png" alt="17301254-73e839bbe3b5be96"/><br/>
+地图</p>
+
+<p>为了构建实际系统的抽象。C4 Model对于系统的描述提供了四个抽象层次：<br/>
+<img src="media/16158681721042/17301254-1819267cd836916c.png" alt="17301254-1819267cd836916"/><br/>
+抽象</p>
+
+<p>这个抽象层次里面包含5个要素</p>
+
+<ul>
+<li><code>Software System</code>：软件系统最高的抽象层次，描述了交付给用户完成用户所需功能的系统。</li>
+<li><code>Person</code>：使用系统的人或者角色。</li>
+<li><code>Container</code>： 容器是独立运行一些代码和数据，组合起来完成系统功能的要素。一个容器可以是Server-side web application、Client-side web application、Client-side desktop application、Mobile app、Server-side console application、Microservice、Database、Blob or content store、File system、Shell script等。</li>
+<li><code>Component</code>：组件一组相关功能的封装，对外提供良好的接口。</li>
+</ul>
+
+<p>基于这四个层次的抽象，C4 Model由4张核心图和3张附加图组成</p>
+
+<h2 id="toc_1">四张核心图</h2>
+
+<p>4张核心图分别为<code>系统上下文图（Context）</code>、<code>容器图（Container）</code>、<code>组件图（Component）</code>、<code>代码图（Code）</code>，代码图是实际的类实现，可选。</p>
+
+<h3 id="toc_2">系统上下文图</h3>
+
+<p><img src="media/16158681721042/Untitled.png" alt="Untitled"/><br/>
+系统上下文图</p>
+
+<p>系统上下文图主要表述的是当前要开发的系统和周边环境的关系，包括系统和用户之间的关系和系统和周边系统的关系，在系统上下文图里，方块指代的是软件系统，蓝色表示我们关注的系统（位于中心），灰色表示我们直接依赖的系统或者依赖我们的系统，虚线框一般用于用于聚合相关元素。</p>
+
+<p>系统上下文图，它展示的是系统大局景观的广角视图，主要包括关键的系统依赖和参与者，关注的重点是人和系统。</p>
+
+<p>在画语境图时，要明确的标出：</p>
+
+<ul>
+<li>我们构建的软件系统是什么？</li>
+<li>谁用这个系统？</li>
+<li>如何融入已有的IT环境？</li>
+</ul>
+
+<h3 id="toc_3">容器图</h3>
+
+<p><img src="media/16158681721042/Untitled%201.png" alt="Untitled 1"/><br/>
+容器图</p>
+
+<p>当我们理解了当前关注的系统在整个IT环境中的地位的时候，需要将当前系统放大，观察里面的内部结构，放大后就会看到容器，如上图所示，C4模型认为系统是由容器组成的。容器图显示的是软件架构中各个独立的部分（一般是一个独立的进程），每个容器的职责和他们间是如何交互的，以及容器与其他系统是如何交互的。它显示了当前软件系统的技术选型和交互方式。它是一个简单的、以高级技术为重点的图表，对软件开发人员和支持/操作人员都很有用。</p>
+
+<p>容器指的是组成软件系统的<strong><em>逻辑上的可执行文件或者过程</em></strong>。容器之间的通信一般是进程间的通信。<br/>
+所以画一个容器的时候要包含：</p>
+
+<ul>
+<li>名称：容器的逻辑名称（如“面向互联网的Web服务器”、“数据库”等）。</li>
+<li>技术：容器的技术选择（如ApacheTomcat7等）。</li>
+<li>职责：容器职责的高层次声明或清单。</li>
+</ul>
+
+<p>之后就是画各个容器之间的通信：</p>
+
+<ul>
+<li>容器之间交互的目的（如“读/写数据”、“发送报告“等）；</li>
+<li>容器之间的通信方法（如Web服务、REST、Java远程方法调用、Java消息服务）；</li>
+<li>容器之间的通信方式（如同步、异步、批量等）；</li>
+<li>容器之间的协议和端口号（如HTTP、HTTPS、SOAP/HTTP、SMTP、FTP等）。</li>
+</ul>
+
+<h3 id="toc_4">组件图</h3>
+
+<p><img src="media/16158681721042/Untitled%202.png" alt="Untitled 2"/></p>
+
+<p>继续放大容器，可以看到每个容器里有哪些组件组成，组件的职责是什么，组件是如何交互的。组件主要是相关功能的聚合，提供对外的接口。</p>
+
+<p>组件图就是将单个容器放大，它可以让你清晰的看到容器的关键逻辑组件、组件之间的层级关系和依赖。所以组件图要标明：</p>
+
+<ul>
+<li>名称：组件的名称</li>
+<li>技术：对组件的技术选择</li>
+<li>职责：对组件职责的高层次的声明</li>
+</ul>
+
+<h3 id="toc_5">代码图</h3>
+
+<p><img src="media/16158681721042/Untitled%203.png" alt="Untitled 3"/><br/>
+代码图</p>
+
+<p>代码图跟UML里面的类图很类似。除非非常重要的且还没有写出代码的组件才画代码图。<br/>
+ 核心图主要固定了我们系统的抽象层次，方便讨论和理解。</p>
+
+<h2 id="toc_6">三张扩展图</h2>
+
+<p>核心图让我理解了系统静态架构，三张扩展图，可以让我们关注更多的维度。</p>
+
+<h3 id="toc_7">系统景观图</h3>
+
+<p><img src="media/16158681721042/Untitled%204.png" alt="Untitled 4"/><br/>
+系统景观图是比系统上下文图更丰富的系统级别的表达。不像上下文图只关注聚焦系统和它的直接关系，连一些间接相关的系统都会标示出来，包括那些外部系统相关的用户。系统景观图的意义在于从企业的整个IT架构来看待当前要构建的系统的功能和价值。</p>
+
+<h3 id="toc_8">动态图</h3>
+
+<p><img src="media/16158681721042/Untitled%205.png" alt="Untitled 5"/><br/>
+动态图不同于上面所有静态图的表达，它表达的系统的某个运行态，这个运行态中完成了一个用户的场景或者功能。所以一般有步骤，有顺序。而且可以在各个层级去描述这个动态图。</p>
+
+<h3 id="toc_9">部署图</h3>
+
+<p><img src="media/16158681721042/Untitled%206.png" alt="Untitled 6"/><br/>
+部署图主要描述系统在容器级别是如何实际部署到物理基础设施中的。</p>
+
+<h2 id="toc_10">图形符号（Notation）</h2>
+
+<p>C4 模型没有预定义任何特定的符号，你在这些示例图中看到的是一个个简单的符号，适用于白板、纸张、便签、索引卡片和各种图表工具。你也可以使用 UML 作为符号，并适当使用包、组件和原型。无论你使用哪种符号，我都会建议让每个元素都包含名称、元素类型（即“人”、“软件系统”，“容器”或“组件”）、技术选型（如果有的话），以及一些描述性文字。在图表中包含如此多的文本可能看起来很不寻常，但这些附加文本有助于消除软件架构图中通常会出现的不明确的表示。</p>
+
+<p>即使符号对你来说是显而易见的，仍然要确保为这些符号提供图例。图例中应该包括颜色、形状、首字母缩略词、线条样式、边框、尺寸等。理想情况下，符号应该在每个细节层次上保持一致。下面是前面显示的容器图的图例。<br/>
+<img src="media/16158681721042/Untitled%207.png" alt="Untitled 7"/><br/>
+最后，不要忘记了标题，它应该出现在每个图表上，以明确地描述每个图表的类型和范围（例如，“网上银行系统的系统上下文图表”）。</p>
+
+<p>下面有一些关于图形符号的实践推荐.</p>
+
+<h3 id="toc_11">图</h3>
+
+<ul>
+<li>每张图都应该有个标题标明图类型和范围</li>
+<li>图中需要有个图例来解释所使用的图形符号（比例 形状、颜色、边框样式等）</li>
+<li>图形里面的缩写所有受众都能理解</li>
+</ul>
+
+<h3 id="toc_12">元素</h3>
+
+<ul>
+<li>所有元素的类型需要被明确指定</li>
+<li>所有元素都需要一个简单描述，描述其核心职能</li>
+<li>所有的容器和组件都需要明确的指定技术</li>
+</ul>
+
+<h3 id="toc_13">关系</h3>
+
+<ul>
+<li>所有关系线都只表示单向的关系</li>
+<li>每一行都应该加上标签，标签应该与关系的方向和意图保持一致(例如依赖关系或数据流)。尽量把标签写得具体些，最好避免使用“Uses”这样的单字。</li>
+<li>容器之间的关系(通常代表进程间通信)应该有明确标记的技术/协议。</li>
+</ul>
+
+<h2 id="toc_14">更多信息</h2>
+
+<p>C4 模型是一种在不同抽象层次上交流软件架构的简单方法，可以向不同的受众讲述不同的故事。这也是向软件开发团队介绍（通常是重新引入）严谨和轻量级建模的一种方式。有关 C4 模型的更多信息，以及补充图（运行时和部署）的示例、符号清单、常见问题解答、会议讲座视频和工具选项，请参阅 <a href="http://c4model.com/">c4model.com</a> 。</p>
+
+<h2 id="toc_15">参考</h2>
+
+<p><a href="https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/samples/C4CoreDiagrams.md">C4 Model Diagrams</a></p>
+
+<p>@startuml<br/>
+!include <a href="https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml">https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml</a><br/>
+&#39; uncomment the following line and comment the first to use locally<br/>
+&#39; !include C4_Context.puml</p>
+
+<p>LAYOUT_WITH_LEGEND()</p>
+
+<p>title System Context diagram for Internet Banking System</p>
+
+<p>Person(customer, &quot;Personal Banking Customer&quot;, &quot;A customer of the bank, with personal bank accounts.&quot;)<br/>
+System(banking_system, &quot;Internet Banking System&quot;, &quot;Allows customers to view information about their bank accounts, and make payments.&quot;)</p>
+
+<p>System_Ext(mail_system, &quot;E-mail system&quot;, &quot;The internal Microsoft Exchange e-mail system.&quot;)<br/>
+System_Ext(mainframe, &quot;Mainframe Banking System&quot;, &quot;Stores all of the core banking information about customers, accounts, transactions, etc.&quot;)</p>
+
+<p>Rel(customer, banking_system, &quot;Uses&quot;)<br/>
+Rel_Back(customer, mail_system, &quot;Sends e-mails to&quot;)<br/>
+Rel_Neighbor(banking_system, mail_system, &quot;Sends e-mails&quot;, &quot;SMTP&quot;)<br/>
+Rel(banking_system, mainframe, &quot;Uses&quot;)<br/>
+@enduml</p>
+
+<p>!includeurl <a href="https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml">https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/release/1-0/C4_Container.puml</a></p>
+
+<p>!include <a href="https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml">https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml</a></p>
+
+<p>!include ./C4_Container.puml</p>
+
+		</div>
+	</article>
+	<div class="share-comment">
+	 
+
+	  
+
+	  
+
+	</div>
+</div>        </div>
+			<footer id="footer" class="inner">Copyright &copy; 2014
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; 
+Theme by <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a>
+      </footer>
+		</div>
+	</div>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+figure{margin: 1em 0;padding: 0;}
+  figcaption{text-align:center;}
+
+/* PrismJS 1.14.0
+https://prismjs.com/download.html#themes=prism-coy&languages=markup+css+clike+javascript */
+/**
+ * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);
+ * @author Tim  Shedor
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  position: relative;
+  margin: .5em 0;
+  overflow: visible;
+  padding: 0;
+}
+pre[class*="language-"]>code {
+  position: relative;
+  border-left: 10px solid #358ccb;
+  box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+  background-color: #fdfdfd;
+  background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+  background-size: 3em 3em;
+  background-origin: content-box;
+  background-attachment: local;
+}
+
+code[class*="language"] {
+  max-height: inherit;
+  height: inherit;
+  padding: 0 1em;
+  display: block;
+  overflow: auto;
+}
+
+/* Margin bottom to accomodate shadow */
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background-color: #fdfdfd;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  position: relative;
+  padding: .2em;
+  border-radius: 0.3em;
+  color: #c92c2c;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: inline;
+  white-space: normal;
+}
+
+pre[class*="language-"]:before,
+pre[class*="language-"]:after {
+  content: '';
+  z-index: -2;
+  display: block;
+  position: absolute;
+  bottom: 0.75em;
+  left: 0.18em;
+  width: 40%;
+  height: 20%;
+  max-height: 13em;
+  box-shadow: 0px 13px 8px #979797;
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  -o-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+}
+
+:not(pre) > code[class*="language-"]:after,
+pre[class*="language-"]:after {
+  right: 0.75em;
+  left: auto;
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  -o-transform: rotate(2deg);
+  transform: rotate(2deg);
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #7D8B99;
+}
+
+.token.punctuation {
+  color: #5F6364;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.function-name,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #c92c2c;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.function,
+.token.builtin,
+.token.inserted {
+  color: #2f9c0a;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword,
+.token.class-name {
+  color: #1990b8;
+}
+
+.token.regex,
+.token.important {
+  color: #e90;
+}
+
+.language-css .token.string,
+.style .token.string {
+  color: #a67f59;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.token.important {
+  font-weight: normal;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+@media screen and (max-width: 767px) {
+  pre[class*="language-"]:before,
+  pre[class*="language-"]:after {
+    bottom: 14px;
+    box-shadow: none;
+  }
+
+}
+
+/* Plugin styles */
+.token.tab:not(:empty):before,
+.token.cr:before,
+.token.lf:before {
+  color: #e0d7d1;
+}
+
+/* Plugin styles: Line Numbers */
+pre[class*="language-"].line-numbers.line-numbers {
+  padding-left: 0;
+}
+
+pre[class*="language-"].line-numbers.line-numbers code {
+  padding-left: 3.8em;
+}
+
+pre[class*="language-"].line-numbers.line-numbers .line-numbers-rows {
+  left: 0;
+}
+
+/* Plugin styles: Line Highlight */
+pre[class*="language-"][data-line] {
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+pre[data-line] code {
+  position: relative;
+  padding-left: 4em;
+}
+pre .line-highlight {
+  margin-top: 0;
+}
+
+pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em; /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    border-right: 1px solid #999;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+    .line-numbers-rows > span {
+        pointer-events: none;
+        display: block;
+        counter-increment: linenumber;
+    }
+
+        .line-numbers-rows > span:before {
+            content: counter(linenumber);
+            color: #999;
+            display: block;
+            padding-right: 0.8em;
+            text-align: right;
+        }
+
+</style>
+  
+    
+
+
+</body>
+</html>
